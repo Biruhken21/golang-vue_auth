@@ -1,0 +1,19 @@
+
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: last-go-postgres
+    environment:
+      POSTGRES_DB: last_go
+      POSTGRES_USER: biruhken
+      POSTGRES_PASSWORD: ayana
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
